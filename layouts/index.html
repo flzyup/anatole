@@ -13,8 +13,8 @@
             </div>
             <div class="post-footer">
                 <div class="meta">
-                    <div class="info"><em class="fa fa-sun-o"></em><span
-                                class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+                    <div class="info"><em class="far fa-calendar-alt"></em><span
+                                class="date">{{ .Date.Format .Site.Params.anatole.dateFormatWeek }}</span>
                         {{ with .Params.tags }}
                             {{- range $index, $el := . -}}
                                 <a class="tag"
@@ -27,6 +27,7 @@
         </div>
     {{ end }}
     <div class="pagination">
-        {{ template "_internal/pagination.html" . }}
+        {{- partial "pagination.html" . -}}
+        <!-- {{ template "_internal/pagination.html" . }} -->
     </div>
 {{ end }}

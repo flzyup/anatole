@@ -4,11 +4,11 @@
 
             <div class="post-title">
                 <h3>{{ .Title }}</h3>
-                {{ if eq .Type "post"}}
+                {{ if eq .Type "posts"}}
                     <div class="info">
-                        <em class="fa fa-sun-o"></em>
-                        <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-                        <em class="fa fa-clock-o"></em>
+                        <em class="far fa-calendar-alt"></em>
+                        <span class="date">{{ .Date.Format .Site.Params.anatole.dateFormatFull }}</span>
+                        <em class="far fa-clock"></em>
                         <span class="reading-time">{{ i18n "reading_time" .ReadingTime }}</span>
                     </div>
                 {{ end }}

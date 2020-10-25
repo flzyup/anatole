@@ -18,6 +18,8 @@
         {{ end }}
     </ul>
     <div class="footer">
-        <div class="by_farbox">&copy; {{ .Site.Params.author }} {{ now.Format "2006"}} </div>
+        <div class="by_farbox">&copy; {{ if .Site.Params.since -}} {{ .Site.Params.since }}-{{- end }}{{ now.Format "2006"}} 
+            {{ .Site.Params.author }}
+        </div>
     </div>
 </div>

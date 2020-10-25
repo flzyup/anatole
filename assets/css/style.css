@@ -9,9 +9,13 @@
     --border-color: rgba(0, 0, 0, 0.15);
     --pre-bg-color: #f9f9fd;
     --nav-text-color: #5a5a5a;
+    --hint-text-color: #888888;
     --tag-color: #424242;
+    --hightlight-color: #2660ab;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
+    --sidebar-size: 30%;
+    --content-size: 70%;
     scroll-padding-top: 100px;
 }
 
@@ -100,7 +104,7 @@ a:visited {
 
 a:hover,
 a:active {
-    color: #2660ab;
+    color: var(--hightlight-color);
 }
 
 /*basic styles ends*/
@@ -174,12 +178,12 @@ a:active {
 .content {
     height: auto;
     float: right;
-    width: 60%;
+    width: var(--content-size);
     margin-top: 60px;
 }
 
 .page-top {
-    width: 60%;
+    width: var(--content-size);
     position: fixed;
     right: 0;
     z-index: 3;
@@ -195,6 +199,8 @@ a:active {
     font-size: 12px;
     display: block;
     width: calc(100% - 30px);
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 .page-top .nav li {
@@ -251,7 +257,7 @@ a:active {
 }
 
 .sidebar {
-    width: 40%;
+    width: var(--sidebar-size);
     -webkit-background-size: cover;
     background-size: cover;
     background-color: var(--bg-color);
@@ -327,6 +333,16 @@ a:active {
     margin: 30px;
 }
 
+.post .post-title .info {
+    margin: 0.5em 0;
+    color: var(--hint-text-color);
+    font-size: 12px;
+}
+
+.post .post-title span {
+    margin-right: 1em;
+}
+
 .post .post-title h1 {
     text-transform: uppercase;
     font-size: 30px;
@@ -344,7 +360,7 @@ a:active {
 }
 
 .post .post-title h3 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     line-height: 1;
     font-weight: 600;
@@ -403,7 +419,7 @@ a:active {
     float: left;
     font-size: 12px;
     margin-bottom: 1em;
-    color: var(--body-color);
+    color: var(--hint-text-color);
 }
 
 .post .post-footer .info .separator a {
@@ -411,16 +427,16 @@ a:active {
 }
 
 .post .post-footer .meta .info .date {
-    margin-right: 10px;
+    margin: 0 10px 0 3px;
 }
 
 .info {
-    margin: 1em;
+    /* margin: 1em; */
 }
 
 .post .post-footer .meta a {
     text-decoration: none;
-    color: var(--body-color);
+    color: var(--hint-text-color);
     padding-right: 10px;
 }
 
@@ -482,7 +498,12 @@ a:active {
 
 .pagination ul li a {
     text-decoration: none;
-    color: var(--body-color);
+    color: var(--hint-text-color);
+    font-size: 0.8em;
+}
+
+.pagination ul li .disabled {
+    color: #eee;
 }
 
 .pagination .pre {
@@ -557,11 +578,13 @@ a:active {
     font-size: 24px;
     color: #666666;
     font-weight: 600;
-    line-height: 2.2em;
+    line-height: 2em;
+    border-bottom: solid 0.5px var(--border-color);
+    margin-bottom: 5px;
 }
 
 .list-with-title .listing {
-    padding: 0;
+    padding: 1px 0;
 }
 
 .list-with-title .listing .listing-post {
