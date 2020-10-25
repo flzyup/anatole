@@ -147,6 +147,17 @@ No comment section is shown on the `single.html`, unless a disqus code is specif
 ```toml
 disqusShortname = "XXX"
 ```
+
+### Comments powered by utteranc
+```yaml
+params:
+  utteranc:
+    enable: true
+    repo: "<github user/group>/<repo name>"
+    issueTerm: "pathname"
+    theme: "github-light"
+```
+
 ### Google Analytics
 To use Google Analytics, a valid tracking code has to be added. If you don't want to load the code, then commend out the parameter.
 ```toml

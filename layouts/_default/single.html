@@ -23,12 +23,22 @@
             </div>
         </div>
 
-        {{ if eq .Type "post"}}
+        {{ if eq .Type "posts"}}
             {{ if .Site.DisqusShortname -}}
                 <div id="fb_comments_container">
                     <h2>{{ i18n "comments" }}</h2>
                     {{ template "_internal/disqus.html" . }}
                 </div>
+            {{- end }}
+            {{- if eq .Site.Params.utteranc.enable true -}}
+                <div id="utter-container"></div>
+                <script src="https://utteranc.es/client.js"
+                    repo= '{{ .Site.Params.utteranc.repo }}'
+                    issue-term= "{{ .Site.Params.utteranc.issueTerm }}"
+                    theme= '{{ .Site.Params.utteranc.theme }}'
+                    crossorigin= "anonymous"
+                    async>
+                </script> 
             {{- end }}
         {{ end }}
     </div>
