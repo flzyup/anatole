@@ -14,8 +14,9 @@
     --hightlight-color: #2660ab;
     --blockquote-text-color: #858585;
     --blockquote-border-color: #dfe2e5;
-    --sidebar-size: 30%;
-    --content-size: 70%;
+    --sidebar-size: 20%;
+    --content-size: 80%;
+    --topbar-size: 60px;
     scroll-padding-top: 100px;
 }
 
@@ -179,7 +180,7 @@ a:active {
     height: auto;
     float: right;
     width: var(--content-size);
-    margin-top: 60px;
+    margin-top: var(--topbar-size);
 }
 
 .page-top {
@@ -188,7 +189,7 @@ a:active {
     right: 0;
     z-index: 3;
     background-color: var(--bg-color);
-    height: 60px;
+    height: var(--topbar-size);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -285,6 +286,7 @@ a:active {
 .sidebar .logo-title .title img {
     width: 127px;
     border-radius: 50%;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar .logo-title .title h3 {
@@ -378,6 +380,36 @@ a:active {
 
 .post .post-title a:hover {
     text-decoration: underline;
+}
+
+.post .post-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.post .post-main .post-toc {
+    position: fixed;
+    right: 0;
+    top: 120px;
+}
+
+/* TOC */
+#toc {
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+}
+#toc * {
+    list-style: none;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+#toc ul {
+    padding-left: 0.8rem;
+}
+#toc li {
+    margin-top: 0.3rem;
 }
 
 .post .post-content a {
@@ -867,7 +899,7 @@ print {
     }
 
     .content {
-        margin-top: 420px;
+        margin-top: 350px;
         width: 100%;
         z-index: 2;
         position: absolute;
